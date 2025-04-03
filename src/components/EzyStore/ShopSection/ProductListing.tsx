@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Search, Star, Zap } from "lucide-react";
+import { ChevronLeft, ChevronRight, Search, Star } from "lucide-react";
 import Product1 from "@assets/EzyStore/Products/Poduct_4.webp";
 import Product2 from "@assets/EzyStore/Products/Poduct_5.webp";
 import Product3 from "@assets/EzyStore/Products/Poduct_6.webp";

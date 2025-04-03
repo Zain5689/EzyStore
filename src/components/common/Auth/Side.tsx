@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const Side = ({ sign, link }) => {
+const Side = ({ any: sign, any: link }) => {
   return (
     <>
       {/* Right Side - Logo and Sign Up */}
