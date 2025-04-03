@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -20,6 +21,11 @@ export default defineConfig({
       "@services": path.resolve(__dirname, "./src/services"),
       "@validations": path.resolve(__dirname, "./src/validations"),
       "@locales": path.resolve(__dirname, "./src/locales"),
+    },
+  },
+  server: {
+    mimeTypes: {
+      js: "application/javascript",
     },
   },
   plugins: [react(), svgr(), tailwindcss()],
