@@ -26,6 +26,9 @@ export default defineConfig({
   server: {
     mimeTypes: {
       js: "application/javascript",
+      ts: "application/typescript",
+      jsx: "application/javascript",
+      tsx: "application/typescript",
     },
   },
   plugins: [react(), svgr(), tailwindcss()],
