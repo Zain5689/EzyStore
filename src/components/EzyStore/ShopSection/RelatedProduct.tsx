@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import { Zap } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import Product1 from "@assets/EzyStore/Products/Poduct_4.webp";
 import Product2 from "@assets/EzyStore/Products/Poduct_5.webp";

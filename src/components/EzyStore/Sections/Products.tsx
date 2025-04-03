@@ -30,7 +30,11 @@ const products = [
   },
 ];
 
-const Section = ({ title }) => (
+interface SectionProps {
+  title: string;
+}
+
+const Section: React.FC<SectionProps> = ({ title }) => (
   <motion.div
     className="w-full"
     initial={{ opacity: 0, y: 50 }}

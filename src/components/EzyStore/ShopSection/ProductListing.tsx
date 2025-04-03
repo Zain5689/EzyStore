@@ -153,9 +153,17 @@ const Shop = () => {
 
   // Sorting products
   if (sort === "price-asc") {
-    filteredProducts.sort((a, b) => a.price - b.price);
+    filteredProducts.sort(
+      (a, b) =>
+        parseFloat(a.price.replace("$", "")) -
+        parseFloat(b.price.replace("$", ""))
+    );
   } else if (sort === "price-desc") {
-    filteredProducts.sort((a, b) => b.price - a.price);
+    filteredProducts.sort(
+      (a, b) =>
+        parseFloat(b.price.replace("$", "")) -
+        parseFloat(a.price.replace("$", ""))
+    );
   } else if (sort === "rating-desc") {
     filteredProducts.sort((a, b) => (b.rating || 0) - (a.rating || 0));
   }
@@ -356,12 +364,12 @@ const Shop = () => {
                           key={i}
                           size={16}
                           className={
-                            i < Math.floor(product.rating)
+                            i < Math.floor(product.rating || 0)
                               ? "text-yellow-400"
                               : "text-gray-300"
                           }
                           fill={
-                            i < Math.floor(product.rating)
+                            i < Math.floor(product.rating || 0)
                               ? "currentColor"
                               : "currentColor"
                           }

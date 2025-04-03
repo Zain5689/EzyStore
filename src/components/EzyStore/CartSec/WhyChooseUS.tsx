@@ -102,7 +102,7 @@ const WhyChooseUS = () => {
 
   const featureVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       y: 0,
       opacity: 1,
       transition: {

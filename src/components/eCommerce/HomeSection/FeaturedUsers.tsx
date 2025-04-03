@@ -29,7 +29,17 @@ const socialLinks = [
   { icon: Youtube, url: "#", label: "YouTube" },
 ];
 
-const UserCard = ({ user }) => (
+interface User {
+  id: string;
+  name: string;
+  avatar: string;
+}
+
+interface UserCardProps {
+  user: User;
+}
+
+const UserCard: React.FC<UserCardProps> = ({ user }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}

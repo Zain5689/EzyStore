@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, User, CreditCard, Eye } from "lucide-react";
 import ShoppingCartStep from "./ShoppingCartStepProps";
@@ -83,12 +83,6 @@ const ShoppingCart: React.FC = () => {
     useState<CustomerInfo>(initialCustomerInfo);
   const [notes, setNotes] = useState("");
   const [paymentMethod, setPaymentMethod] = useState<string>("credit-card");
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // Set isLoaded to true after component mounts to trigger animations
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
 
   const updateQuantity = (id: number, increment: boolean) => {
     setCartItems((items) =>

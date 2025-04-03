@@ -1,5 +1,4 @@
 import React, { Suspense } from "react";
-import { Navigate } from "react-router-dom";
 import { Input } from "@components/Form";
 import { Side } from "@components/common";
 import useRegister from "@hooks/useRegister";

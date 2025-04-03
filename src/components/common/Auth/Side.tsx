@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
-const Side = ({ any: sign, any: link }) => {
+
+interface SideProps {
+  sign: string;
+  link: string;
+}
+
+const Side: React.FC<SideProps> = ({ sign, link }) => {
   return (
     <>
-      {/* Right Side - Logo and Sign Up */}
       <div className="hidden md:flex flex-col items-center justify-center bg-[#CC7700] rounded-3xl py-2 text-white h-[100%] relative">
         <div className="mb-[-5px]">
           <svg className="w-24 h-24" viewBox="0 0 24 24" fill="currentColor">

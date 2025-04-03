@@ -1,14 +1,25 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Minus, Plus } from "lucide-react";
 import { ProductDesc, RelatedProduct } from "@components/EzyStore";
 
+// Define the types for the product object
+interface Product {
+  name: string;
+  price: string;
+  rating: number;
+  reviewCount: number;
+  images: string[];
+  specs?: string[];
+  types?: string[];
+  colors?: string[];
+  image?: string;
+}
+
 const ProductDetails = () => {
   const location = useLocation();
-  const product = location.state?.product;
+  const product = location.state?.product as Product; // Explicitly type the product
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -97,7 +108,7 @@ const ProductDetails = () => {
           >
             <div className="flex md:flex-col gap-3 sm:gap-4">
               {Array.isArray(product?.images) && product.images.length > 0 ? (
-                product.images.map((image, index) => (
+                product.images.map((image: string, index: number) => (
                   <motion.button
                     key={index}
                     onClick={() => setSelectedImage(index)}
@@ -210,7 +221,7 @@ const ProductDetails = () => {
               className="text-xs sm:text-sm text-gray-600 space-y-1 md:space-y-2"
               variants={itemVariants}
             >
-              {product.specs?.map((spec, index) => (
+              {product.specs?.map((spec: string, index: number) => (
                 <p key={index}>{spec}</p>
               ))}
             </motion.div>
@@ -218,7 +229,7 @@ const ProductDetails = () => {
             <motion.div variants={itemVariants}>
               <p className="text-gray-600 mb-2">Type</p>
               <div className="flex gap-2 flex-wrap">
-                {product.types?.map((type) => (
+                {product.types?.map((type: string) => (
                   <motion.button
                     key={type}
                     onClick={() => setSelectedType(type)}
@@ -264,7 +275,7 @@ const ProductDetails = () => {
             <motion.div variants={itemVariants}>
               <p className="text-gray-600 mb-2">Color</p>
               <div className="flex gap-2">
-                {product.colors?.map((color) => (
+                {product.colors?.map((color: string) => (
                   <motion.button
                     key={color}
                     onClick={() => setSelectedColor(color)}
